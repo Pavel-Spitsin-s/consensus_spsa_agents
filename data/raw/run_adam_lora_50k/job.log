@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "/home/spitsynpa/long_spsa_experiments/long_spsa_experiments.py", line 426, in <module>
+    main()
+  File "/home/spitsynpa/long_spsa_experiments/long_spsa_experiments.py", line 422, in main
+    run_adam_lora(args)
+  File "/home/spitsynpa/long_spsa_experiments/long_spsa_experiments.py", line 340, in run_adam_lora
+    loss = consensus_loss(model(xb), yb, gb) / args.grad_accum
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/spitsynpa/long_spsa_experiments/long_spsa_experiments.py", line 174, in forward
+    s, m, a, c = agent(x_emb, states[i], y, left, right, global_msg, state_ctx, y_ctx)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/spitsynpa/long_spsa_experiments/long_spsa_experiments.py", line 139, in forward
+    h = self.net(h)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 219, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/activation.py", line 705, in forward
+    return F.gelu(input, approximate=self.approximate)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 42.00 MiB. GPU 0 has a total capacity of 15.63 GiB of which 16.31 MiB is free. Process 1881884 has 752.00 MiB memory in use. Process 1893805 has 266.00 MiB memory in use. Process 3784307 has 4.94 GiB memory in use. Including non-PyTorch memory, this process has 9.65 GiB memory in use. Of the allocated memory 9.32 GiB is allocated by PyTorch, and 145.44 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
